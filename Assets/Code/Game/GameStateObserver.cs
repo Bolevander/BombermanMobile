@@ -8,8 +8,17 @@ namespace Bomberman
 
         public GameStateObserver(Player player)
         {
-            _player = player;
+            _player = player;           
+        }
+
+        public void SubscribeOnDied()
+        {
             _player.OnDied += ResetGame;
+        }
+        
+        public void UnSubscribeOnDied()
+        {
+            _player.OnDied -= ResetGame;
         }
 
         private void ResetGame()

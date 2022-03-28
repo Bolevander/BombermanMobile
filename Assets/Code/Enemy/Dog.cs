@@ -6,10 +6,9 @@
         {
             base.Start();
             _patrolBehaviour = new BasePatrol(_startWaypoint, _moveSpeed, _body);
-            Root.OnUpdate += Patrol;
         }
 
-        protected override void Patrol()
+        public override void Patrol()
         {
             _patrolBehaviour.Patrol();
         }

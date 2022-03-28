@@ -21,13 +21,13 @@ namespace Bomberman
 
         protected void OnTriggerEnter2D(Collider2D collision)
         {
-            if (_isDead == false && collision.TryGetComponent(out Explosion explosion))
+            if (_isDead == false && collision.TryGetComponent(out Explosion _))
             {
                 _isDead = true;
                 gameObject.SetActive(false);
             }
         }
 
-        protected abstract void Patrol();
+        public abstract void Patrol();
     }
 }

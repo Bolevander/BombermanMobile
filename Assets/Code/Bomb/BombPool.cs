@@ -20,6 +20,7 @@ namespace Bomberman
             return null;
         }
 
+        //For bomb pickup
         public void RestoreOne()
         {
             for (int i = _bombs.Count - 1; i >= 0; i--)
@@ -27,6 +28,7 @@ namespace Bomberman
                 if (_bombs[i].Exploded == true)
                 {
                     _bombs[i].Restore();
+                    return;
                 }
             }
         }
